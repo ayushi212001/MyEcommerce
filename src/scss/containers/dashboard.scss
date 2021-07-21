@@ -1,0 +1,331 @@
+.dashboard {
+
+    //default
+  
+    .dashboard__visitors-chart-title {
+  
+      @include directify($directions) {
+        text-align: directed('left');
+      }
+      span {
+        color: $color-additional;
+        font-size: 11px;
+      }
+    }
+  
+    .dashboard__visitors-chart-number {
+  
+      @include directify($directions) {
+        text-align: directed('left');
+      }
+      font-size: 48px;
+      line-height: 34px;
+      margin-bottom: 10px;
+    }
+  
+    .dashboard__audience-table {
+  
+      @include directify($directions) {
+        text-align: directed('left');
+      }
+      .progress {
+        margin-top: 10px;
+      }
+  
+      .progress-bar {
+        height: 10px;
+      }
+    }
+  
+    .dashboard__table-flag {
+      width: 42px;
+      height: 30px;
+      @include directify($directions) {
+        #{directed('margin-right')}: 25px;
+      }
+    }
+  
+    .dashboard__bounce-percent {
+      @include directify($directions) {
+        text-align: directed('left');
+      }
+      color: $color-accent;
+      font-size: 48px;
+      line-height: 48px;
+      margin-top: 20px;
+      margin-bottom: 45px;
+    }
+  
+    //commerce
+  
+    .dashboard__product-img {
+      max-height: 270px;
+      height: 100%;
+      padding: 10px 0 20px 0;
+      margin-bottom: 15px;
+      text-align: center;
+  
+      @include themify($themes) {
+        border-bottom: 1px solid themed('colorBorder');
+      }
+  
+      img {
+        width: auto;
+        max-width: 100%;
+        max-height: 240px;
+      }
+    }
+  
+    .dashboard__product-title {
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+  
+    .dashboard__product-subhead {
+      @include directify($directions) {
+        text-align: directed('left');
+      }
+      font-size: 13px;
+      line-height: normal;
+    }
+  
+    .dashboard__table-orders {
+      overflow: hidden;
+      min-width: 410px;
+  
+      tbody td {
+        padding: 16px 10px;
+      }
+  
+      .dashboard__table-orders-title {
+        position: relative;
+        @include directify($directions) {
+          #{directed('padding-left')}: 52px;
+        }
+        display: flex;
+        line-height: 15px;
+        align-items: center;
+      }
+    }
+    .dashboard__chart-pie--commerce, .dashboard__chart-pie--fitness {
+      .recharts-legend-wrapper {
+        @media screen and (min-width: 370px) {
+          bottom: 0px !important;
+        }
+        @media screen and (min-width: 700px) {
+          bottom: 70px !important;
+        }
+        @media screen and (min-width: 1020px) {
+          bottom: -30px !important;
+        }
+        @media screen and (min-width: 1200px) {
+          bottom: -55px !important;
+        }
+        @media screen and (min-width: 1400px) {
+          bottom: -25px !important;
+        }
+        @media screen and (min-width: 1800px) {
+          bottom: -30px !important;
+        }
+      }
+    }
+  
+    .dashboard__table-orders-total {
+      white-space: nowrap;
+    }
+  
+    .dashboard__table-orders-img-wrap {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      overflow: hidden;
+      @include directify($directions) {
+        #{directed('left')}: 10px;
+      }
+    }
+  
+    .dashboard__table-orders-img {
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  
+    .dashboard__table-orders-amount {
+      display: flex;
+  
+      div {
+        width: 3px;
+        height: 14px;
+        display: inline-block;
+        background-color: $color-accent;
+        border-radius: 3px;
+        @include directify($directions) {
+          #{directed('margin-right')}: 3px;
+          #{directed('margin-left')}: 0px;
+        }
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+  
+      span {
+        color: $color-additional;
+        @include directify($directions) {
+          #{directed('margin-right')}: 0px;
+          #{directed('margin-left')}: 5px;
+        }
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+  
+      &.dashboard__table-orders-amount--medium {
+  
+        div {
+          background-color: $color-yellow;
+        }
+      }
+  
+      &.dashboard__table-orders-amount--low {
+  
+        div {
+          background-color: $color-red;
+        }
+      }
+    }
+  
+    .dashboard__table-orders-link {
+      font-size: 12px;
+      margin-top: 20px;
+      display: block;
+  
+      svg {
+        height: 12px;
+        width: 12px;
+      }
+    }
+  
+    .dashboard__table-more {
+      display: flex;
+  
+      & > button {
+        margin: 0;
+        padding: 0 5px;
+        border: none;
+        background-color: transparent;
+        @include directify($directions) {
+          #{directed('margin-left')}: auto;
+        }
+  
+        &:before {
+          display: none;
+        }
+  
+        svg {
+          margin: 0;
+          height: 20px;
+          width: 20px;
+          fill: $color-additional;
+          transition: all 0.3s;
+        }
+  
+        &:hover, &:not([disabled]):not(.disabled):active, &:focus {
+          background: transparent;
+  
+          svg {
+            fill: $color-accent;
+          }
+        }
+      }
+  
+      & > div {
+        min-width: 90px;
+        width: 100%;
+      }
+  
+      button {
+        font-size: 13px;
+      }
+    }
+  
+    .dashboard__sales-toggle {
+  
+      label {
+        margin: 0;
+  
+        &:after {
+          box-shadow: none;
+          background-color: $color-red;
+        }
+      }
+    }
+  
+    .dashboard__sales-toggle-left {
+      @include directify($directions) {
+        #{directed('margin-left')}: auto;
+      }
+      @include directify($directions) {
+        #{directed('margin-right')}: 12px;
+      }
+      color: $color-additional;
+      pointer-events: none;
+    }
+  
+    .dashboard__sales-toggle-right {
+      @include directify($directions) {
+        #{directed('margin-left')}: 12px;
+        #{directed('margin-right')}: auto;
+      }
+      color: $color-additional;
+      pointer-events: none;
+    }
+  
+    .dashboard__sales-report {
+      display: flex;
+  
+      & > div {
+        width: 100%;
+        @include directify($directions) {
+          #{directed('margin-right')}: 25px;
+        }
+        margin-bottom: 0;
+  
+        &:last-child {
+          @include directify($directions) {
+            #{directed('margin-right')}: 0px;
+          }
+        }
+      }
+  
+      p {
+        margin-top: 0;
+      }
+    }
+  
+    .dashboard__sales-report-title {
+      color: $color-additional;
+      font-size: 12px;
+      line-height: 13px;
+      margin-bottom: 10px;
+    }
+  
+    .dashboard__sales-report-now {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 18px;
+      margin-bottom: 4px;
+    }
+  
+    .dashboard__sales-report-plan {
+      font-size: 11px;
+      line-height: 15px;
+      color: $color-additional;
+      opacity: 0.5;
+      margin-bottom: 10px;
+    }
+  
+    .dashboard__sales-report-value {
+      margin-bottom: 0;
+    }
+}
